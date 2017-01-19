@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="en" languagename="English" countrycode="gb">
+    <category name="wcf.conversation">
+        <item name="wcf.conversation.forward"><![CDATA[Forward Private Message]]></item>
+		<item name="wcf.conversation.button.forward"><![CDATA[Forward]]></item>
+        <item name="wcf.conversation.forward.error.invalidInputID"><![CDATA[Invalid conversation input ID]]></item>
+		<item name="wcf.conversation.forward.error.invalidParticipation"><![CDATA[You do not have permission to forward this item]]></item>
+    </category>
+
+</language>

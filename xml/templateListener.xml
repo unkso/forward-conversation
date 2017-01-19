@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/templatelistener.xsd">
+    <import>
+		<!-- Show forward button above conversation list -->
+        <templatelistener name="conversationForwardButtonTop">
+            <environment>user</environment>
+            <templatename>conversation</templatename>
+            <eventname>contentNavigationButtonsTop</eventname>
+            <templatecode><![CDATA[<li><a href="{link controller='ConversationForward' id=$conversationID}{/link}" title="{lang}wcf.conversation.forward{/lang}" class="btn btn-primary btn-3d"><span class="icon icon16 icon-arrow-right"></span> <span>{lang}wcf.conversation.button.forward{/lang}</span></a></li>]]></templatecode>
+        </templatelistener>
+
+        <!-- Show forward button below conversation list -->
+        <templatelistener name="conversationForwardButtonBottom">
+            <environment>user</environment>
+            <templatename>conversation</templatename>
+            <eventname>contentNavigationButtonsBottom</eventname>
+            <templatecode><![CDATA[<li><a href="{link controller='ConversationForward' id=$conversationID}{/link}" title="{lang}wcf.conversation.forward{/lang}" class="btn btn-primary btn-3d"><span class="icon icon16 icon-arrow-right"></span> <span>{lang}wcf.conversation.button.forward{/lang}</span></a></li>]]></templatecode>
+        </templatelistener>
+    </import>
+</data>
