@@ -21,5 +21,6 @@
 		<instruction type="file">files.tar</instruction>
 		<instruction type="language">language/*.xml</instruction>
 		<instruction type="templateListener">xml/templateListener.xml</instruction>
+		<instruction type="bbcode">xml/bbcode.xml</instruction>
 	</instructions>
 </package>
