@@ -91,7 +91,7 @@ class ConversationForwardForm extends ConversationAddForm {
 			$username = $quote["username"];
 			$text = $quote["text"];
 			
-			$this->text .= "[quote='".$username."'][size=8][i][color=#aaaaaa][sup]".$date." ".$time."[/sup][/color][/i][/size][quote][block]".$text."[/block][/quote][/quote]";
+			$this->text .= "[quote='".$username."'][size=8][i][color=#aaaaaa][sup]".$date." ".$time."[/sup][/color][/i][/size][block]".$text."[/block][/quote]";
 		}
 	}
 	
