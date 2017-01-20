@@ -27,7 +27,9 @@ class ConversationForwardForm extends ConversationAddForm {
 	
 	public $preMessageContentFormatted = "";
 	
-	public $preSubject = "";
+	public $subject = "";
+	
+	public $text = "";
 	
 	public $enableHtml = false;
 	
@@ -67,7 +69,7 @@ class ConversationForwardForm extends ConversationAddForm {
 		$statement = WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->preConversationID));
 		while ($row = $statement->fetchArray()) {
-			$this->preSubject = "FW: ".$row["subject"];
+			$this->subject = WCF::getLanguage()->get('wcf.conversation.forward.subject').$row["subject"];
 		}
 		
 		// get messages
@@ -86,8 +88,10 @@ class ConversationForwardForm extends ConversationAddForm {
 			
 			$message = new ConversationMessage($row["messageID"]);
 			$quote = MessageQuoteManager::getInstance()->renderQuote($message, $row["message"], false);
+			$username = $quote["username"];
+			$text = $quote["text"];
 			
-			$this->preMessageContentFormatted .= "[quote='".$quote["username"]."','".$quote["link"]."'][size=8][i][color=#aaaaaa][sup]".$date." ".$time."[/sup][/color][/i][/size][block]".$quote["text"]."[/block][/quote]";
+			$this->text .= "[quote='".$username."'][size=8][i][color=#aaaaaa][sup]".$date." ".$time."[/sup][/color][/i][/size][quote][block]".$text."[/block][/quote][/quote]";
 		}
 	}
 	
@@ -99,8 +103,8 @@ class ConversationForwardForm extends ConversationAddForm {
 		
 		WCF::getTPL()->assign(array(
 			'preConversationID' => $this->preConversationID,
-			'subject' => $this->preSubject,
-			'text' => $this->preMessageContentFormatted
+			'subject' => $this->subject,
+			'text' => $this->text
 		));
 	}
 }
